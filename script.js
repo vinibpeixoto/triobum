@@ -1,6 +1,7 @@
-/* triobum — interações locais e progressivas, sem dependências ou chamadas externas. */
+/* triobum — interface local; destinos futuros abrem conversas contextuais em nova aba. */
 'use strict';
 
+const prompts = window.TriobumPrompts;
 const answers = { objetivo: null, sensacao: null, distancia: null, orcamento: null };
 const questionLabels = { objetivo: 'objetivo', sensacao: 'sensação', distancia: 'distância', orcamento: 'orçamento' };
 const wizardFeedback = document.getElementById('wizard-feedback');
@@ -14,6 +15,8 @@ function clearRecommendation() {
   document.getElementById('recommendation').hidden = true;
   document.getElementById('recommendation-title').textContent = '';
   document.getElementById('recommendation-reason').textContent = '';
+  const complete = Object.values(answers).every(Boolean);
+  if (complete) document.getElementById('profile-ai-link').href = prompts.urlForProfile(answers);
 }
 
 function setWizardStep(step) {
@@ -66,8 +69,12 @@ document.getElementById('wizard-next').addEventListener('click', () => {
 });
 document.getElementById('wizard-back').addEventListener('click', () => setWizardStep(1));
 document.getElementById('wizard-submit').addEventListener('click', () => {
-  const missing = missingFor(['distancia', 'orcamento']);
-  if (missing.length) { wizardFeedback.textContent = `Escolha ${missing.join(' e ')} para ver a recomendação.`; return; }
+  const missing = missingFor(['objetivo', 'sensacao', 'distancia', 'orcamento']);
+  if (missing.length) {
+    wizardFeedback.textContent = `Escolha ${missing.join(', ')} para ver as recomendações.`;
+    return;
+  }
+  document.getElementById('profile-ai-link').href = prompts.urlForProfile(answers);
   const faster = answers.objetivo === 'evoluir' && answers.sensacao === 'responsiva' && answers.distancia !== 'longões';
   const title = faster ? 'Seu ponto de partida: triobum pulso.' : 'Seu ponto de partida: triobum fluxo.';
   const budgetNote = answers.orcamento === 'ainda não sei'
@@ -82,6 +89,13 @@ document.getElementById('wizard-submit').addEventListener('click', () => {
   recommendation.hidden = false;
   document.getElementById('recommendation-title').focus({ preventScroll: true });
   recommendation.scrollIntoView({ behavior: scrollBehavior(), block: 'center' });
+});
+
+document.querySelectorAll('a[data-topic]').forEach(link => {
+  link.href = prompts.urlForTopic(link.dataset.topic);
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.setAttribute('aria-label', `${link.textContent.trim()} — abrir conversa no ChatGPT em nova aba`);
 });
 
 const cards = [...document.querySelectorAll('.product-card')];
@@ -147,6 +161,38 @@ stories.forEach((story, i) => { story.setAttribute('role', 'group'); story.setAt
 cards[0].setAttribute('aria-current', 'true');
 stories[0].setAttribute('aria-current', 'true');
 
+const compare = document.getElementById('compare');
+const compareProgress = compare.querySelector('.compare-mobile-progress');
+const compareNavigation = compare.querySelector('.compare-mobile-navigation');
+const compareDescriptions = [
+  'Primeiro, conheça as duas sensações.',
+  'Depois, veja como cada tênis se comporta e se ajusta.',
+  'Por fim, descubra qual faz mais sentido para você.'
+];
+let compareStep = 1;
+compare.classList.add('is-enhanced');
+compareProgress.hidden = false;
+compareNavigation.hidden = false;
+document.getElementById('compare-step-description').tabIndex = -1;
+function showCompareStep(step, moveFocus = false) {
+  compareStep = Math.min(3, Math.max(1, step));
+  compare.dataset.step = String(compareStep);
+  const label = `0${compareStep} / 03`;
+  document.getElementById('compare-step-count').textContent = label;
+  document.getElementById('compare-nav-counter').textContent = label;
+  document.getElementById('compare-step-description').textContent = compareDescriptions[compareStep - 1];
+  compareProgress.querySelectorAll('i').forEach((bar, index) => bar.classList.toggle('active', index === compareStep - 1));
+  document.getElementById('compare-back').hidden = compareStep === 1;
+  document.getElementById('compare-next').hidden = compareStep === 3;
+  if (moveFocus) {
+    document.getElementById('compare-step-description').focus({ preventScroll: true });
+    compareProgress.scrollIntoView({ behavior: scrollBehavior(), block: 'start' });
+  }
+}
+document.getElementById('compare-back').addEventListener('click', () => showCompareStep(compareStep - 1, true));
+document.getElementById('compare-next').addEventListener('click', () => showCompareStep(compareStep + 1, true));
+showCompareStep(1);
+
 const places = {
   eventos: {
     title: 'Eventos para começar.', description: 'Provas para descobrir um novo percurso e correr no seu tempo.',
@@ -208,48 +254,15 @@ function renderPlaces(filter) {
     const li = document.createElement('li');
     const strong = document.createElement('strong'); strong.textContent = title;
     const span = document.createElement('span'); span.textContent = location;
-    const button = document.createElement('button'); button.type = 'button'; button.textContent = 'Ver detalhes →';
-    button.addEventListener('click', () => showDialog(title, `${description} Local demonstrativo: sem inscrição, reserva ou dados ao vivo.`, 'EXPLORE'));
-    li.append(strong, span, button); return li;
+    const link = document.createElement('a');
+    link.textContent = 'Explorar opções reais ↗';
+    link.href = prompts.urlForPlace({ type: filter, name: title, location, description });
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.setAttribute('aria-label', `${title}: explorar opções reais no ChatGPT em nova aba`);
+    li.append(strong, span, link); return li;
   }));
   document.querySelectorAll('[data-filter]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === filter)));
 }
 document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => renderPlaces(button.dataset.filter)));
 renderPlaces('eventos');
-
-const information = {
-  'começar': ['Para começar', 'Conforto para criar o hábito. Este é um exemplo de produto editorial, não uma ficha comercial nem uma oferta real. Compare sensações, ajuste e orçamento antes de escolher.'],
-  'diário': ['Treino diário', 'Para quem quer um parceiro de treino consistente, confortável e versátil em diferentes semanas.'],
-  'velocidade': ['Mais velocidade', 'Uma direção de produto para treinos rápidos. Vale considerar resposta, estabilidade e sua adaptação ao modelo.'],
-  'longão': ['Longão', 'Proteção para ir mais longe, sem deixar de lado ajuste e conforto no seu ritmo.'],
-  'provas': ['Dia de prova', 'Uma opção para explorar leveza e resposta quando cada segundo importa.'],
-  'fluxo': ['triobum fluxo', 'Macio e estável: para começar, acumular quilômetros e priorizar conforto. Este protótipo não apresenta uma oferta comercial real.'],
-  'pulso': ['triobum pulso', 'Leve e responsivo: para ganhar ritmo em treinos rápidos e provas. Este protótipo não apresenta uma oferta comercial real.'],
-  'comparacao': ['O que muda na sua corrida?', 'O fluxo prioriza conforto e estabilidade. O pulso prioriza leveza e resposta. As quatro linhas desta página explicam sensação, comportamento, ajuste e perfil de uso sem reduzir a comparação a números técnicos.'],
-  'drop': ['O que é drop?', 'Drop é a diferença de altura entre calcanhar e frente do tênis. Um valor isolado não define o modelo ideal: considere conforto, adaptação e o uso pretendido.'],
-  'troca': ['Quando trocar o tênis?', 'Olhe o solado, a espuma e o cabedal; perceba se o amortecimento mudou ou se o tênis passou a deformar. Não existe um número de quilômetros que sirva para todas as pessoas.'],
-  'placa': ['Placa vale a pena?', 'A placa pode ajudar na eficiência em certos contextos, mas não substitui conforto, estabilidade e adaptação. Para quem está começando, esses fatores podem pesar mais.'],
-  'tamanho': ['Como acertar o tamanho?', 'Meça os dois pés ao fim do dia, considere o maior e deixe espaço para os dedos. Compare a forma do modelo e experimente sempre que puder.'],
-  'perguntas': ['Perguntas da comunidade', 'Esta área demonstra uma curadoria de dúvidas reais. Em um produto completo, teria respostas verificadas, moderação, fontes e atribuição aos participantes.'],
-  'turma': ['Encontre sua turma', 'Explore grupos locais, comunidades digitais e encontros de corrida. Os exemplos deste protótipo são demonstrativos e não incluem inscrições nem integração com plataformas externas.'],
-  'strava': ['Clubes no Strava', 'O futuro diretório poderá mostrar clubes públicos e suas descrições, sempre apontando para a origem verificada. Neste protótipo, o link abre esta explicação local.'],
-  'bairro': ['Grupos do bairro', 'Um índice futuro pode reunir grupos de corrida de diferentes regiões, com horário, nível e forma de contato confirmados.'],
-  'digital': ['Comunidades digitais', 'Uma curadoria futura poderá reunir conversas de corredores e espaços de troca sobre produtos, treinos e provas.']
-};
-const dialog = document.getElementById('info-dialog');
-let dialogTrigger = null;
-function showDialog(title, text, kicker = 'TRIOBUM · SAIBA MAIS') {
-  dialogTrigger = document.activeElement;
-  document.getElementById('dialog-kicker').textContent = kicker;
-  document.getElementById('dialog-title').textContent = title;
-  document.getElementById('dialog-text').textContent = text;
-  dialog.showModal();
-}
-document.querySelectorAll('[data-info]').forEach(button => button.addEventListener('click', () => {
-  const [title, text] = information[button.dataset.info] || ['Mais informações', 'Conteúdo demonstrativo.'];
-  showDialog(title, text);
-}));
-document.getElementById('dialog-close').addEventListener('click', () => dialog.close());
-dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
-dialog.addEventListener('close', () => { if (dialogTrigger?.isConnected) dialogTrigger.focus(); });
-document.getElementById('dialog-action').addEventListener('click', () => dialog.close());
