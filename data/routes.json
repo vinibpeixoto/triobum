@@ -1,0 +1,11 @@
+{
+  "basePath": "/triobum/",
+  "routes": [
+    {
+      "path": "/",
+      "title": "triobum — Corra melhor.",
+      "payload": "data/pages/running-shoes/home.json",
+      "url": "/triobum/"
+    }
+  ]
+}
