@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vinibpeixoto.github.io/triobum/sitemap.xml

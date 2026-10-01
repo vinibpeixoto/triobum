@@ -1,1 +1,8 @@
-{"routes":[{"path":"/","title":"triobum — Corra melhor."}]}
+{
+  "routes": [
+    {
+      "path": "/",
+      "title": "triobum — Corra melhor."
+    }
+  ]
+}

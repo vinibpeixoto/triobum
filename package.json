@@ -1,0 +1,1 @@
+{"name":"triobum","version":"2.0.0","private":true,"description":"Site estático triobum gerado por tema e página","scripts":{"build":"node scripts/build.mjs","test":"node scripts/test.mjs && node scripts/test-compare.mjs","check":"npm run build && npm test"},"devDependencies":{"linkedom":"^0.18.12","nunjucks":"3.2.4"}}
