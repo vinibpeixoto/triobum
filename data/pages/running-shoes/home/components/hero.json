@@ -1,0 +1,21 @@
+{
+  "brandLabel": "triobum",
+  "title": {
+    "beforeMark": "Corra",
+    "mark": "rhythmBars",
+    "afterMark": "melhor."
+  },
+  "image": {
+    "src": "assets/hero-shoes.webp",
+    "alt": "Coleção de tênis de corrida em diferentes cores",
+    "width": 1990,
+    "height": 360
+  },
+  "description": "Feito para o seu ritmo.",
+  "primaryAction": {
+    "label": "Encontrar meu tênis",
+    "icon": "↗",
+    "href": "#descubra"
+  },
+  "supportingStatement": "Um bom tênis não é igual para todo mundo. O seu começa por aqui."
+}

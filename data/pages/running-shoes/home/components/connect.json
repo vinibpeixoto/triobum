@@ -1,0 +1,41 @@
+{
+  "anchorId": "conecte",
+  "eyebrow": "07 · CONECTE-SE",
+  "title": {
+    "beforeMark": "Corra",
+    "mark": "rhythmBars",
+    "afterMark": "junto."
+  },
+  "description": "Toda corrida fica melhor quando é compartilhada.",
+  "image": {
+    "src": "assets/runners.webp",
+    "alt": "Grupo diverso de sete pessoas correndo lado a lado",
+    "width": 1580,
+    "height": 610
+  },
+  "primaryAction": {
+    "label": "Encontrar minha turma",
+    "icon": "→",
+    "promptId": "connect.groups",
+    "accessibleLabel": "Encontrar minha turma — abrir conversa no ChatGPT em nova aba"
+  },
+  "navigationLabel": "Encontrar comunidades de corrida",
+  "links": [
+    {
+      "label": "Clubes no Strava",
+      "promptId": "connect.strava",
+      "accessibleLabel": "Clubes no Strava — abrir conversa no ChatGPT em nova aba"
+    },
+    {
+      "label": "Grupos do bairro",
+      "promptId": "connect.local",
+      "accessibleLabel": "Grupos do bairro — abrir conversa no ChatGPT em nova aba"
+    },
+    {
+      "label": "Comunidades digitais",
+      "promptId": "connect.digital",
+      "accessibleLabel": "Comunidades digitais — abrir conversa no ChatGPT em nova aba"
+    }
+  ],
+  "linksSeparator": "·"
+}

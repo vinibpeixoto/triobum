@@ -1,0 +1,204 @@
+{
+  "anchorId": "explore",
+  "eyebrow": "06 · EXPLORE",
+  "title": "Explore a corrida ao seu redor.",
+  "description": "Eventos, rotas, serviços e comunidades no mesmo mapa.",
+  "map": {
+    "image": "assets/mapa-sp.webp",
+    "accessibleLabel": "Mapa ilustrativo da região de São Paulo; os lugares demonstrativos estão disponíveis na lista ao lado",
+    "filterGroupLabel": "Filtrar lugares no mapa"
+  },
+  "placesPanel": {
+    "eyebrow": "PERTO DE VOCÊ · DEMONSTRAÇÃO",
+    "notice": "Lugares ilustrativos: este protótipo não consulta localização nem inscrições em tempo real.",
+    "itemAction": {
+      "label": "Explorar opções reais",
+      "icon": "↗",
+      "promptId": "places.search",
+      "accessibleLabelFormat": "{title}: explorar opções reais no ChatGPT em nova aba"
+    }
+  },
+  "initialFilterId": "events",
+  "filters": [
+    {
+      "id": "events",
+      "label": "Eventos",
+      "title": "Eventos para começar.",
+      "description": "Provas para descobrir um novo percurso e correr no seu tempo.",
+      "markerColor": "#d7f45e",
+      "markers": [
+        [
+          34,
+          49
+        ],
+        [
+          53,
+          62
+        ],
+        [
+          67,
+          38
+        ],
+        [
+          44,
+          78
+        ]
+      ],
+      "items": [
+        {
+          "id": "events-1",
+          "title": "Corrida 5K — domingo, 7h",
+          "location": "Parque Ibirapuera · São Paulo",
+          "description": "Uma prova curta para começar com companhia."
+        },
+        {
+          "id": "events-2",
+          "title": "Volta do parque — 10 km",
+          "location": "Parque Villa-Lobos · São Paulo",
+          "description": "Percurso urbano em ritmo aberto."
+        },
+        {
+          "id": "events-3",
+          "title": "Circuito da orla — 5 km",
+          "location": "Santos · litoral paulista",
+          "description": "Uma manhã de corrida perto do mar."
+        }
+      ]
+    },
+    {
+      "id": "routes",
+      "label": "Rotas",
+      "title": "Rotas para descobrir.",
+      "description": "Trajetos ilustrativos para diferentes distâncias e jeitos de correr.",
+      "markerColor": "#126fe5",
+      "markers": [
+        [
+          41,
+          43
+        ],
+        [
+          48,
+          47
+        ],
+        [
+          56,
+          56
+        ],
+        [
+          63,
+          59
+        ]
+      ],
+      "items": [
+        {
+          "id": "routes-1",
+          "title": "Volta do parque — 4,8 km",
+          "location": "Parque Ibirapuera · percurso plano",
+          "description": "Boa para uma rodagem leve."
+        },
+        {
+          "id": "routes-2",
+          "title": "Marginal do rio — 8 km",
+          "location": "Pinheiros · São Paulo",
+          "description": "Para encaixar um treino mais longo."
+        },
+        {
+          "id": "routes-3",
+          "title": "Rota da manhã — 3 km",
+          "location": "Centro · Santos",
+          "description": "Para tirar o primeiro treino do papel."
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "label": "Serviços",
+      "title": "Ajuda para evoluir.",
+      "description": "Apoio profissional de corrida, com exemplos para explorar o conceito.",
+      "markerColor": "#ef777b",
+      "markers": [
+        [
+          30,
+          37
+        ],
+        [
+          40,
+          66
+        ],
+        [
+          56,
+          41
+        ],
+        [
+          72,
+          70
+        ]
+      ],
+      "items": [
+        {
+          "id": "services-1",
+          "title": "Assessoria de corrida",
+          "location": "Zona oeste · São Paulo",
+          "description": "Treinos acompanhados em grupo."
+        },
+        {
+          "id": "services-2",
+          "title": "Treinador de corrida",
+          "location": "Atendimento ilustrativo · online",
+          "description": "Orientação personalizada para seus objetivos."
+        },
+        {
+          "id": "services-3",
+          "title": "Avaliação de corrida",
+          "location": "Centro · São Paulo",
+          "description": "Uma conversa sobre treino, adaptação e rotina."
+        }
+      ]
+    },
+    {
+      "id": "communities",
+      "label": "Comunidades",
+      "title": "Gente para correr junto.",
+      "description": "Ideias de lugares para encontrar companhia e compartilhar percursos.",
+      "markerColor": "#9b71df",
+      "markers": [
+        [
+          38,
+          55
+        ],
+        [
+          49,
+          72
+        ],
+        [
+          65,
+          47
+        ],
+        [
+          72,
+          78
+        ]
+      ],
+      "items": [
+        {
+          "id": "communities-1",
+          "title": "Grupo do bairro",
+          "location": "Vila Mariana · São Paulo",
+          "description": "Encontros em horários combinados."
+        },
+        {
+          "id": "communities-2",
+          "title": "Clube de corrida",
+          "location": "Pinheiros · São Paulo",
+          "description": "Treinos de diferentes ritmos."
+        },
+        {
+          "id": "communities-3",
+          "title": "Comunidade digital",
+          "location": "Encontros online",
+          "description": "Trocas sobre tênis, treinos e provas."
+        }
+      ]
+    }
+  ]
+}

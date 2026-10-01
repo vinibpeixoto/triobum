@@ -1,0 +1,82 @@
+{
+  "anchorId": "compare",
+  "eyebrow": "03 · COMPARE",
+  "title": "Compare o que muda na sua corrida.",
+  "description": "Duas experiências explicadas do jeito que você sente.",
+  "accessibleLabelFormat": "Comparação entre {firstProduct} e {secondProduct}",
+  "productIds": [
+    "running-shoes.flow",
+    "running-shoes.pulse"
+  ],
+  "productAction": {
+    "labelFormat": "Ver {nickname}",
+    "colorsLabelFormat": "Cores ilustrativas do {nickname}",
+    "icon": "→"
+  },
+  "moreProducts": {
+    "label": "Roleta de experiências",
+    "initialMessageFormat": "Compare {firstProduct} e {secondProduct}.",
+    "loadingMessage": "Buscando outra dupla para você...",
+    "successMessageFormat": "Agora, compare {firstProduct} e {secondProduct}.",
+    "resultLink": {
+      "label": "Ver comparação",
+      "targetId": "compare-table",
+      "icon": "→"
+    },
+    "emptyMessage": "Por enquanto, essa é a única dupla disponível para comparar.",
+    "errorMessage": "Não conseguimos buscar outra dupla agora. Tente novamente."
+  },
+  "attributes": [
+    {
+      "id": "feel",
+      "name": "Sensação",
+      "icon": "☁",
+      "mobileStep": 1
+    },
+    {
+      "id": "behavior",
+      "name": "Comportamento",
+      "icon": "◇",
+      "mobileStep": 2
+    },
+    {
+      "id": "fit",
+      "name": "Ajuste",
+      "icon": "⌁",
+      "mobileStep": 2
+    },
+    {
+      "id": "bestFor",
+      "name": "Para quem faz mais sentido",
+      "icon": "↗",
+      "mobileStep": 3
+    }
+  ],
+  "mobileSteps": [
+    {
+      "id": 1,
+      "description": "Primeiro, conheça as duas sensações."
+    },
+    {
+      "id": 2,
+      "description": "Depois, veja como cada tênis se comporta e se ajusta."
+    },
+    {
+      "id": 3,
+      "description": "Por fim, descubra qual faz mais sentido para você."
+    }
+  ],
+  "mobileNavigation": {
+    "label": "Navegar pela comparação",
+    "stepLabel": "PASSO",
+    "counterFormat": "{currentPadded} / {totalPadded}",
+    "back": "← Voltar",
+    "next": "Continuar →"
+  },
+  "moreAction": {
+    "label": "Ver comparação completa",
+    "icon": "→",
+    "promptId": "compare.overview",
+    "accessibleLabel": "Ver comparação completa — abrir conversa no ChatGPT em nova aba"
+  }
+}

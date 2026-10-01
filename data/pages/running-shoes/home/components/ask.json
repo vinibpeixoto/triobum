@@ -1,0 +1,48 @@
+{
+  "anchorId": "pergunte",
+  "eyebrow": "04 · PERGUNTE",
+  "title": "Perguntas em destaque.",
+  "description": "Dúvidas reais. Respostas de quem corre, testa e compartilha.",
+  "questions": [
+    {
+      "id": "plate-first-10k",
+      "topic": "ESCOLHA · PRIMEIROS 10 KM",
+      "title": "Tênis com placa faz sentido para meus primeiros 10 km?",
+      "summary": "Se você está começando, conforto, ajuste e adaptação tendem a contar mais do que a presença de uma placa. Veja como pensar nessa escolha.",
+      "author": "Marina · Comunidade triobum",
+      "avatar": {
+        "initial": "M",
+        "surface": "mint"
+      },
+      "action": {
+        "label": "Ler resposta completa",
+        "icon": "→",
+        "promptId": "ask.plate",
+        "accessibleLabel": "Ler resposta completa — abrir conversa no ChatGPT em nova aba"
+      }
+    },
+    {
+      "id": "replace-training-shoe",
+      "topic": "USO · MANUTENÇÃO",
+      "title": "Quando é hora de trocar meu tênis de treino?",
+      "summary": "Não existe um número universal de quilômetros. O desgaste do solado, a estrutura e a sensação na corrida ajudam a decidir.",
+      "author": "Rafael · Comunidade triobum",
+      "avatar": {
+        "initial": "R",
+        "surface": "lilac"
+      },
+      "action": {
+        "label": "Ler resposta completa",
+        "icon": "→",
+        "promptId": "ask.replace",
+        "accessibleLabel": "Ler resposta completa — abrir conversa no ChatGPT em nova aba"
+      }
+    }
+  ],
+  "allQuestionsAction": {
+    "label": "Ver todas as perguntas",
+    "icon": "→",
+    "promptId": "ask.all",
+    "accessibleLabel": "Ver todas as perguntas — abrir conversa no ChatGPT em nova aba"
+  }
+}

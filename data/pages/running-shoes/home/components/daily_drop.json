@@ -1,0 +1,116 @@
+{
+  "anchorId": "entenda",
+  "eyebrow": "05 · ENTENDA",
+  "title": "Entenda o seu tênis.",
+  "description": "Do drop à placa, a triobum traduz tecnologia, uso e desgaste para ajudar você a escolher com mais confiança.",
+  "statement": "Um novo jeito de escolher.",
+  "storiesLabel": "Quatro histórias para entender o seu tênis",
+  "storyCounterFormat": "{current} de {total}",
+  "controls": {
+    "previous": {
+      "icon": "←",
+      "accessibleLabel": "Story anterior"
+    },
+    "next": {
+      "icon": "→",
+      "accessibleLabel": "Próximo story"
+    },
+    "accessibleLabel": "Navegação dos stories"
+  },
+  "stories": [
+    {
+      "id": "drop",
+      "surface": "coral",
+      "brandLabel": "triobum · Entenda",
+      "title": "O que é drop?",
+      "lead": "A diferença de altura que muda a sensação da passada.",
+      "image": {
+        "src": "assets/story-drop.webp",
+        "alt": "Perfil de um tênis mostrando a diferença entre a altura do calcanhar e da frente"
+      },
+      "body": {
+        "type": "paragraph",
+        "text": "Drops maiores costumam reduzir a exigência sobre panturrilha e tornozelo. Drops menores deixam a passada mais próxima do solo."
+      },
+      "action": {
+        "label": "Entenda o drop",
+        "icon": "↗",
+        "promptId": "guide.drop",
+        "accessibleLabel": "Entenda o drop — abrir conversa no ChatGPT em nova aba"
+      }
+    },
+    {
+      "id": "replace",
+      "surface": "rose",
+      "brandLabel": "triobum · Entenda",
+      "title": "Quando trocar o tênis?",
+      "lead": "O desgaste aparece no solado, na estrutura — e também no jeito que o tênis responde.",
+      "image": {
+        "src": "assets/story-wear.webp",
+        "alt": "Detalhes de solado gasto, espuma comprimida e calcanhar deformado"
+      },
+      "body": {
+        "type": "list",
+        "items": [
+          "O amortecimento parece diferente",
+          "O solado perdeu parte do desenho",
+          "O tênis começou a inclinar ou deformar"
+        ]
+      },
+      "action": {
+        "label": "Ver os sinais",
+        "icon": "↗",
+        "promptId": "guide.replace",
+        "accessibleLabel": "Ver os sinais — abrir conversa no ChatGPT em nova aba"
+      }
+    },
+    {
+      "id": "plate",
+      "surface": "blush",
+      "brandLabel": "triobum · Entenda",
+      "title": "Placa vale a pena?",
+      "lead": "Ela pode ajudar na eficiência, mas não substitui conforto e estabilidade.",
+      "image": {
+        "src": "assets/story-plate.webp",
+        "alt": "Vista explodida de um tênis com camadas de espuma e placa"
+      },
+      "body": {
+        "type": "paragraph",
+        "text": "A placa faz mais sentido para quem já corre com frequência e quer ganhar ritmo. Para começar, adaptação, conforto e estabilidade costumam importar mais."
+      },
+      "action": {
+        "label": "Entender a placa",
+        "icon": "↗",
+        "promptId": "guide.plate",
+        "accessibleLabel": "Entender a placa — abrir conversa no ChatGPT em nova aba"
+      }
+    },
+    {
+      "id": "size",
+      "surface": "mint",
+      "brandLabel": "triobum · Entenda",
+      "title": "Como acertar o tamanho?",
+      "lead": "Meça o pé, deixe espaço para os dedos e compare a forma entre os modelos.",
+      "image": {
+        "src": "assets/story-size.webp",
+        "alt": "Pé em uma régua ilustrativa de medidas"
+      },
+      "body": {
+        "type": "numberedList",
+        "items": [
+          "Meça no fim do dia",
+          "Considere o pé maior",
+          "Deixe espaço na frente"
+        ]
+      },
+      "action": {
+        "label": "Ver guia de tamanho",
+        "icon": "↗",
+        "promptId": "guide.size",
+        "accessibleLabel": "Ver guia de tamanho — abrir conversa no ChatGPT em nova aba"
+      }
+    }
+  ],
+  "storiesRoleDescription": "carrossel",
+  "storyRoleDescription": "story"
+}

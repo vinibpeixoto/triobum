@@ -1,0 +1,228 @@
+{
+  "anchorId": "descubra",
+  "eyebrow": "01 · DESCUBRA",
+  "title": "O tênis certo começa por você.",
+  "description": "Conte como você corre. A gente ajuda a encontrar o que faz sentido para você.",
+  "stage": {
+    "caption": "Um encontro entre você e o seu próximo tênis.",
+    "image": {
+      "src": "assets/wizard-panel.webp",
+      "alt": "Três modelos de tênis usados como referência no questionário",
+      "width": 1455,
+      "height": 715
+    },
+    "counterFormat": "{currentPadded} / {totalPadded}"
+  },
+  "fieldLabelFormat": "{number}. {name}.",
+  "steps": [
+    {
+      "id": "running-style",
+      "title": "Seu jeito de correr.",
+      "description": "Primeiro, o que você busca e como gosta de sentir o tênis?",
+      "fields": [
+        {
+          "fieldId": "goal",
+          "number": 1,
+          "display": "horizontal",
+          "options": [
+            {
+              "id": "start",
+              "label": "Começar a correr",
+              "icon": "↗"
+            },
+            {
+              "id": "improve",
+              "label": "Evoluir nos treinos",
+              "icon": "↗"
+            }
+          ]
+        },
+        {
+          "fieldId": "feel",
+          "number": 2,
+          "display": "tiles",
+          "options": [
+            {
+              "id": "soft",
+              "label": "Macia",
+              "icon": "☁"
+            },
+            {
+              "id": "balanced",
+              "label": "Equilibrada",
+              "icon": "◇"
+            },
+            {
+              "id": "responsive",
+              "label": "Responsiva",
+              "icon": "ϟ"
+            },
+            {
+              "id": "stable",
+              "label": "Estável",
+              "icon": "⬡"
+            }
+          ]
+        }
+      ],
+      "nextAction": {
+        "label": "Continuar",
+        "icon": "→"
+      }
+    },
+    {
+      "id": "running-context",
+      "title": "O tênis certo começa por você.",
+      "description": "Só mais duas respostas para deixar a recomendação mais precisa.",
+      "fields": [
+        {
+          "fieldId": "distance",
+          "number": 3,
+          "display": "tiles",
+          "options": [
+            {
+              "id": "5k",
+              "label": "Até 5 km",
+              "icon": "⚑",
+              "phrase": "5 km"
+            },
+            {
+              "id": "10k",
+              "label": "10 km",
+              "icon": "↝",
+              "phrase": "10 km"
+            },
+            {
+              "id": "21k",
+              "label": "21 km",
+              "icon": "◈",
+              "phrase": "21 km"
+            },
+            {
+              "id": "long",
+              "label": "Longões e maratona",
+              "icon": "↗",
+              "phrase": "longões"
+            }
+          ]
+        },
+        {
+          "fieldId": "budget",
+          "number": 4,
+          "display": "budget",
+          "options": [
+            {
+              "id": "under-500",
+              "label": "Até R$ 500",
+              "reasonValue": "até R$ 500"
+            },
+            {
+              "id": "500-800",
+              "label": "De R$ 500 a R$ 800",
+              "reasonValue": "R$ 500 a R$ 800"
+            },
+            {
+              "id": "800-1200",
+              "label": "De R$ 800 a R$ 1.200",
+              "reasonValue": "R$ 800 a R$ 1.200"
+            },
+            {
+              "id": "undecided",
+              "label": "Ainda não sei",
+              "reasonValue": "ainda não sei"
+            }
+          ]
+        }
+      ],
+      "closingNote": {
+        "emphasis": "Pronto. Agora vamos encontrar o tênis que combina com o seu corre.",
+        "description": "Suas respostas ajudam a filtrar os modelos que mais fazem sentido para você."
+      },
+      "backAction": {
+        "label": "← Voltar"
+      },
+      "primaryAction": {
+        "label": "Ver minhas recomendações",
+        "icon": "→"
+      }
+    }
+  ],
+  "messages": {
+    "stepAnnouncement": "Etapa {current} de {total}.",
+    "missingFirstStep": "Escolha {missingFields} para continuar.",
+    "missingAnswers": "Escolha {missingFields} para ver as recomendações.",
+    "firstStepJoiner": " e ",
+    "otherStepsJoiner": ", "
+  },
+  "recommendation": {
+    "eyebrow": "SUA SELEÇÃO",
+    "defaultModelId": "flow",
+    "titles": {
+      "flow": "Seu ponto de partida: triobum fluxo.",
+      "pulse": "Seu ponto de partida: triobum pulso."
+    },
+    "reasons": {
+      "flow": "Você busca {goalPhrase}, prefere uma sensação {feelValue} e costuma correr {distancePhrase}. O fluxo prioriza conforto e estabilidade. {budgetMessage}",
+      "pulse": "Você quer evoluir, prefere uma sensação responsiva e costuma correr {distancePhrase}. O pulso prioriza leveza e resposta para treinos em que o ritmo sobe. {budgetMessage}"
+    },
+    "compareAction": {
+      "label": "Comparar os dois modelos",
+      "icon": "→",
+      "href": "#compare"
+    },
+    "externalAction": {
+      "label": "Explorar mais opções",
+      "icon": "↗",
+      "promptId": "discover.profile",
+      "accessibleLabel": "Explorar mais opções — abrir conversa no ChatGPT em nova aba"
+    },
+    "externalNotice": "Este link abre uma ferramenta de IA em outra aba e inclui as quatro respostas que você escolheu na URL da conversa.",
+    "rules": [
+      {
+        "modelId": "pulse",
+        "all": [
+          {
+            "fieldId": "goal",
+            "equals": "improve"
+          },
+          {
+            "fieldId": "feel",
+            "equals": "responsive"
+          },
+          {
+            "fieldId": "distance",
+            "notEquals": "long"
+          }
+        ]
+      }
+    ],
+    "reasonBindings": {
+      "goalPhrase": {
+        "fieldId": "goal",
+        "values": {
+          "start": "começar a correr",
+          "improve": "evoluir com uma base confiável"
+        }
+      },
+      "feelValue": {
+        "fieldId": "feel",
+        "optionProperty": "label",
+        "transform": "lowercase"
+      },
+      "distancePhrase": {
+        "fieldId": "distance",
+        "optionProperty": "phrase"
+      },
+      "budgetMessage": {
+        "fieldId": "budget",
+        "messages": {
+          "unselected": "Você pode definir o orçamento depois de comparar conforto, ajuste e uso.",
+          "selected": "Seu orçamento de {budgetValue} ajuda a organizar a busca; os preços destes modelos ainda não estão disponíveis neste protótipo."
+        },
+        "unselectedOptionId": "undecided",
+        "valueProperty": "reasonValue",
+        "valueVariable": "budgetValue"
+      }
+    }
+  }
+}

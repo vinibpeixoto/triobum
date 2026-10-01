@@ -1,0 +1,47 @@
+{
+  "anchorId": "topo",
+  "logo": {
+    "text": "triobum",
+    "mark": "rhythmBars",
+    "href": "#topo",
+    "accessibleLabel": "triobum, voltar ao topo"
+  },
+  "navigation": {
+    "accessibleLabel": "Navegação principal",
+    "links": [
+      {
+        "label": "Descubra",
+        "href": "#descubra"
+      },
+      {
+        "label": "Escolha",
+        "href": "#escolha"
+      },
+      {
+        "label": "Compare",
+        "href": "#compare"
+      },
+      {
+        "label": "Pergunte",
+        "href": "#pergunte"
+      },
+      {
+        "label": "Entenda",
+        "href": "#entenda"
+      },
+      {
+        "label": "Explore",
+        "href": "#explore"
+      },
+      {
+        "label": "Conecte-se",
+        "href": "#conecte"
+      }
+    ]
+  },
+  "primaryAction": {
+    "label": "Encontre seu tênis",
+    "icon": "↗",
+    "href": "#descubra"
+  }
+}

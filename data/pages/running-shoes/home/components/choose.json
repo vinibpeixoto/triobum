@@ -1,0 +1,119 @@
+{
+  "anchorId": "escolha",
+  "eyebrow": "02 · ESCOLHA",
+  "title": "Escolhas para o seu corre.",
+  "description": "Uma seleção para cada objetivo, ritmo e momento.",
+  "categoryNavigationLabel": "Categorias de tênis",
+  "carouselLabel": "Vitrine de tênis",
+  "carouselStatusFormat": "{current} de {total}",
+  "carouselSlideLabelFormat": "{current} de {total}: {title}",
+  "controls": {
+    "previous": {
+      "icon": "←",
+      "accessibleLabel": "Produto anterior"
+    },
+    "next": {
+      "icon": "→",
+      "accessibleLabel": "Próximo produto"
+    }
+  },
+  "cards": [
+    {
+      "id": "start",
+      "categoryLabel": "Começar",
+      "thumbnail": "assets/shoe-start.webp",
+      "eyebrow": "SEU PRIMEIRO PASSO",
+      "title": "Para começar",
+      "description": "Conforto para criar o hábito.",
+      "image": {
+        "src": "assets/card-backdrop-start.webp",
+        "alt": "Tênis cinza-claro com detalhe verde-lima para começar a correr"
+      },
+      "surface": "blue",
+      "action": {
+        "label": "Conhecer o modelo",
+        "icon": "↗",
+        "promptId": "catalog.start",
+        "accessibleLabel": "Conhecer o modelo — abrir conversa no ChatGPT em nova aba"
+      }
+    },
+    {
+      "id": "daily",
+      "categoryLabel": "Treino diário",
+      "thumbnail": "assets/shoe-daily.webp",
+      "eyebrow": "SEU DIA A DIA",
+      "title": "Treino diário",
+      "description": "Feito para acompanhar todos os quilômetros.",
+      "image": {
+        "src": "assets/card-backdrop-daily.webp",
+        "alt": "Tênis branco e azul para treino diário"
+      },
+      "surface": "white",
+      "action": {
+        "label": "Conhecer o modelo",
+        "icon": "↗",
+        "promptId": "catalog.daily",
+        "accessibleLabel": "Conhecer o modelo — abrir conversa no ChatGPT em nova aba"
+      }
+    },
+    {
+      "id": "speed",
+      "categoryLabel": "Velocidade",
+      "thumbnail": "assets/shoe-speed.webp",
+      "eyebrow": "NOVO",
+      "title": "Mais velocidade",
+      "description": "Leve para quando o ritmo sobe.",
+      "image": {
+        "src": "assets/card-backdrop-speed.webp",
+        "alt": "Tênis verde-lima para treinos de velocidade"
+      },
+      "surface": "cream",
+      "action": {
+        "label": "Conhecer o modelo",
+        "icon": "↗",
+        "promptId": "catalog.speed",
+        "accessibleLabel": "Conhecer o modelo — abrir conversa no ChatGPT em nova aba"
+      }
+    },
+    {
+      "id": "long",
+      "categoryLabel": "Longão",
+      "thumbnail": "assets/shoe-long.webp",
+      "eyebrow": "PARA IR MAIS LONGE",
+      "title": "Longão",
+      "description": "Proteção para ir mais longe.",
+      "image": {
+        "src": "assets/card-backdrop-long.webp",
+        "alt": "Tênis roxo para longões"
+      },
+      "surface": "lilac",
+      "action": {
+        "label": "Conhecer o modelo",
+        "icon": "↗",
+        "promptId": "catalog.long",
+        "accessibleLabel": "Conhecer o modelo — abrir conversa no ChatGPT em nova aba"
+      }
+    },
+    {
+      "id": "race",
+      "categoryLabel": "Provas",
+      "thumbnail": "assets/card-backdrop-race.webp",
+      "eyebrow": "DIA DE PROVA",
+      "title": "Dia de prova",
+      "description": "Resposta para quando cada segundo importa.",
+      "image": {
+        "src": "assets/card-backdrop-race.webp",
+        "alt": "Tênis coral para provas"
+      },
+      "surface": "peach",
+      "action": {
+        "label": "Conhecer o modelo",
+        "icon": "↗",
+        "promptId": "catalog.race",
+        "accessibleLabel": "Conhecer o modelo — abrir conversa no ChatGPT em nova aba"
+      }
+    }
+  ],
+  "carouselRoleDescription": "carrossel",
+  "slideRoleDescription": "slide"
+}
