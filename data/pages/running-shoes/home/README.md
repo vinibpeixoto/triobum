@@ -1,4 +1,4 @@
-# triobum — data/pages/running-shoes
+# triobum — data/pages/running-shoes/home
 
 Esta pasta é parte da saída estática **gerada**. Não edite seus arquivos diretamente; altere os JSONs e templates em `src/` e execute `npm run build`.
 
